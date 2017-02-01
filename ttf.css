@@ -1,0 +1,89 @@
+#map-canvas {
+	position: absolute;
+	top: 0px;
+	left: 0px; 
+	height: 400px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#panel {
+	position: absolute;
+	top: 0px;
+	right:0px;
+	width: 20%;
+	height: 400px;
+	background-color: #fff;
+}
+
+#chart_div {
+	heigth: 300px;
+}
+
+#filter_div {
+	height: 30px;
+}	
+
+h1 {
+	text-align: center;
+	font-size: 28pt;
+	font-family: arial
+}
+
+#t1 {
+	vertical-align: center;
+	background: black;
+	color: white;
+	font-size: 28pt;
+	font-family: arial;
+}
+
+#heading,#groundspeed, #altitude, #climbrate {
+	position: relative;
+	left: 0px;
+	height: 100px;
+	width:100%;
+	background: black;
+	color: white;
+	font-size: 24pt;
+	font-family: arial;
+	visibility: hidden;
+}
+
+#bNewFlight,#bInfo {
+	position: relative;
+	left: 0px;
+	height: 100px;
+	width:100%;
+	background: blue;
+	color: white;
+	font-size: 24pt;
+	font-family: arial;
+	visibility: hidden;
+}
+
+#dashboard_div {
+	position: absolute;
+	top: 400px;
+	width: 80%;
+}
+
+#info_div {
+	position: absolute;
+	top: 400px;
+	right: 0px;
+	height: 330px;
+	width: 20%;
+}
+
+#myInfo {
+	visibility: hidden;
+	position: absolute;
+	top: 400px;
+	right: 0px;
+	width: 20%;
+	height: 330px;
+	font-family: arial;
+	background: white;
+}

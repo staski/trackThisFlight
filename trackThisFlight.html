@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Track This Flight</title>
+
+    <link rel="stylesheet" type="text/css" href="ttf.css">
+
+	<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=geometry">
+    </script>
+	
+	<script src="ttfGpx.js"></script>
+	<script src="ttfGpxUI.js"></script>	
+
+</head>
+<body>
+
+<div id="map-canvas">
+<input type="file" id="theFile" style="display:none" onchange="handleFiles(this.files)">
+<center>
+<button id="t1" onclick="fileButtonClick()"> select a flight log file<br> (extension .gpx) </button>
+</center>
+</div>
+
+<div id="panel" visibility="hidden">
+	<button id="heading"></button>
+	<button id="groundspeed"></button>
+	<button id="altitude"></button>
+	<button id="climbrate"></button>                              		
+</div>
+
+
+<div id="dashboard_div">
+	<div id="chart_div"></div>
+	<div id="filter_div"></div>
+</div>
+
+<div id="info_div" visibility="hidden">
+	<input type="file" id="theFile" style="display:none" onchange="handleFiles(this.files)">
+
+	<button id="bNewFlight" onclick="fileButtonClick()"> new flight </button>
+	<button id="bInfo" onclick="infoButtonClick()"> toggle display steep turns </button>
+</div>
+
+</body>
+</html>
