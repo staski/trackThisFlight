@@ -14,7 +14,6 @@ var firstCallFindSteepTurns = true;
 
 function globalInit () {
 	pointarray = [];
-	aerodromes = [];
 	crossings = [];
 	loops = [];
 	poly = null;
