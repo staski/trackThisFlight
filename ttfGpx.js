@@ -669,7 +669,7 @@ function findSteepTurns(s,e, maxseconds)
     				loops.pop();
     			}
     			var l = new Loop (i, k);
-    			l.initVisuals ();				
+    			//l.initVisuals ();				
     			loops.push(l); 
     			totalCrossings++; 
     			lastExit = k; 
