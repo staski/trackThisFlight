@@ -152,11 +152,11 @@ Loop.prototype.initVisuals = function () {
 function showLoops()
 {
 	var first = loops[0].entry; var last = loops[loops.length -1].exit;
-	map.fitBounds(getBounds(first, last));
 	
 	for (var i = 0; i < loops.length; i++){
 		loops[i].show();
 	}	
+	map.fitBounds(getBounds(first, last));
 }
 
 
@@ -507,6 +507,7 @@ function isCrossing(i, k){
 		return false;
 	}
 	
+	
 	var path1 = [pointarray[i].LatLng, pointarray[i + 1].LatLng, pointarray[k].LatLng];
 	var path2 = [pointarray[i].LatLng, pointarray[i + 1].LatLng, pointarray[k + 1].LatLng];
 	var path3 = [pointarray[k].LatLng, pointarray[k + 1].LatLng, pointarray[i].LatLng];
@@ -517,9 +518,16 @@ function isCrossing(i, k){
 
 	var area3 = google.maps.geometry.spherical.computeSignedArea(path3);
 	var area4 = google.maps.geometry.spherical.computeSignedArea(path4);
-	if ((area1 * area2 < 0) && (area3 * area4 < 0))
+	var s1 = area1 * area2; var s2 = area3 * area4;
+	
+	if ((s1 < 0) && (s2 < 0))
 	{
-		return true; 
+		// exclude some pathological cases
+		// otherwise rounding errors in computeSignedArea can lead
+		// two wrong results
+		if (s1 < -1 && s2 < -1){
+			return true;
+		} 
 	}
 	
 	return false;
@@ -631,7 +639,8 @@ function mapSetPoly(rows) {
 function toggleDisplaySteepTurns(){
 	
 	if (firstCallFindSteepTurns == true){
-		findSteepTurns(0, pointarray.length, 120);
+		// every loop closed in less than 90 seconds is considered to be a steep turn
+		findSteepTurns(0, pointarray.length, 90);
 		firstCallFindSteepTurns = false;
 	}
 	
