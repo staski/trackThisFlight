@@ -129,26 +129,6 @@ Loop.prototype.getInfowindow = function () {
 	return this.infowindow;
 }
 
-Loop.prototype.initVisuals = function () {
-	
-	this.infowindow = new google.maps.InfoWindow({
-    			content: this.log(),
-  			});
-	
-	this.polyline = new google.maps.Polyline ();
-	
-	var polyOptions = {
-    	strokeColor: '#ff0000',
-    	strokeOpacity: 1.0,
-    	strokeWeight: 2,
-    	map: map,
-	};
-
-	this.polyline.setOptions(polyOptions);
-	this.polyline.setPath(this.locs);
-
-}
-
 function showLoops()
 {
 	var first = loops[0].entry; var last = loops[loops.length -1].exit;
@@ -678,7 +658,6 @@ function findSteepTurns(s,e, maxseconds)
     				loops.pop();
     			}
     			var l = new Loop (i, k);
-    			//l.initVisuals ();				
     			loops.push(l); 
     			totalCrossings++; 
     			lastExit = k; 

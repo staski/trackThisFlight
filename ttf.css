@@ -8,17 +8,26 @@
 	margin-right: auto;
 }
 
+#button-canvas {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url("ttfbg.jpg");
+}
+
 #panel {
 	position: absolute;
 	top: 0px;
 	right:0px;
 	width: 20%;
 	height: 400px;
-	background-color: #fff;
 }
 
 #chart_div {
-	heigth: 300px;
+	height: 170px;
 }
 
 #filter_div {
@@ -32,11 +41,11 @@ h1 {
 }
 
 #t1 {
-	vertical-align: center;
 	background: black;
 	color: white;
 	font-size: 28pt;
 	font-family: arial;
+	border: 10px;
 }
 
 #heading,#groundspeed, #altitude, #climbrate {
@@ -48,6 +57,8 @@ h1 {
 	color: white;
 	font-size: 24pt;
 	font-family: arial;
+	border-width: 1px;
+	border-color: white;	
 	visibility: hidden;
 }
 
@@ -66,6 +77,7 @@ h1 {
 #dashboard_div {
 	position: absolute;
 	top: 400px;
+	height: 200 px;
 	width: 80%;
 }
 
@@ -73,17 +85,7 @@ h1 {
 	position: absolute;
 	top: 400px;
 	right: 0px;
-	height: 330px;
+	height: 200px;
 	width: 20%;
 }
 
-#myInfo {
-	visibility: hidden;
-	position: absolute;
-	top: 400px;
-	right: 0px;
-	width: 20%;
-	height: 330px;
-	font-family: arial;
-	background: white;
-}

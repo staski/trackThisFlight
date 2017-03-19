@@ -36,6 +36,7 @@ function handleFiles(myfiles) {
 		datapoints = parser.pts;
 		console.log(datapoints.length);
 		  
+		$( "div" ).remove('#button-canvas');
 		//initAeroDromes ();		  		
 		mapInit();
 		setPlanePosition(0);
@@ -47,24 +48,10 @@ function handleFiles(myfiles) {
 		$("#bNewFlight").css("visibility", "visible"); 
 		$("#bInfo").css("visibility", "visible"); 
 		
-		infoButtonsShow ();
 		drawChart(thisFile.name);
 
 	}
 }		
-
-function infoButtonsShow(){
-	$( "#myInfo" ).button({
-		icons: {
-			primary: "ui-icon-triangle"
-		},
-		text: false,
-		label: ""
-	});
-	$("#myInfo").css("visibility", "visible");
-
-}  
-
 	
 function drawChart( flightName ) 
 {
