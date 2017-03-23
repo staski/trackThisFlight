@@ -37,6 +37,7 @@ function handleFiles(myfiles) {
 		console.log(datapoints.length);
 		  
 		$( "div" ).remove('#button-canvas');
+		$( "#dashboard_div" ).removeAttr("hidden");
 		//initAeroDromes ();		  		
 		mapInit();
 		setPlanePosition(0);
