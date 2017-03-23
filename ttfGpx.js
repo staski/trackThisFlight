@@ -72,6 +72,8 @@ function Loop(s,e){
 	this.locs = locs;
 	this.avgSpeed = vel / (e - s + 1);
 	this.altDiff = maxA - minA;
+    
+    this.area = google.maps.geometry.spherical.computeSignedArea(locs);
 	this.length = google.maps.geometry.spherical.computeLength(locs);
 
 	// this is somewhat inaccurate, see the introductory comment
