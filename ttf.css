@@ -8,6 +8,16 @@
 	margin-right: auto;
 }
 
+#title-canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5%;
+ 	margin: auto;
+
+ }
+
 #button-canvas {
 	display: flex;
 	align-items: center;
@@ -38,7 +48,8 @@
 h1 {
 	text-align: center;
 	font-size: 28pt;
-	font-family: arial
+	color: white;
+	font-family: arial;
 }
 
 #t1 {
