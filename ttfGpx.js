@@ -390,8 +390,11 @@ GPXParser.prototype.addTrackSegment = function(trackSegment)
 
 }
 
+// set the planes marker in the map using the selected position in the chart view
 function setPlanePosition( i ){
-	var k = i + offset;
+
+	var k = i + offset; // offset is adjusted to the first index in the currently filtered
+						// segment when this segment is displayed
 	if (planePosition != null && k >= 0 && k < pointarray.length){
 		planePosition.setPosition(pointarray[k].LatLng);
 		
@@ -590,6 +593,7 @@ function mapSetPoly(rows) {
 	var path = [];
 	poly.setVisible(false);
 
+	console.log(rows);
 	for (var i = 0; i< rows.length; i++){
     	path.push(pointarray[rows[i]].LatLng);
 	}
@@ -612,8 +616,7 @@ function mapSetPoly(rows) {
 
 	poly = new google.maps.Polyline(polyOptions);
 	poly.setPath(path);
-    setPlanePosition(rows[0] - offset);    
-
+	setPlanePosition(0);
 	poly.setVisible(true);
 
 }
