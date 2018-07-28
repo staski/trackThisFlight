@@ -25,17 +25,17 @@ function onMouseOverHandlerGC(e) {
 }
 
 function fileButtonClick() {
-	var chartProvider = "c3";
+	var chartProvider = "google";
 	var params = (new URL(document.location)).searchParams;
 	chartProvider = params.get("render_chart"); 
 	
-	if (chartProvider === "google"){
-		drawChart = drawChartGC
+	if (chartProvider === "c3"){
+		drawChart = drawChartC3
 		onMouseOverHandler = onMouseOverHandlerGC;
 	} 
 	else
 	{
-		drawChart = drawChartC3;
+		drawChart = drawChartGC;
 		onMouseOverHandler = onMouseOverHandlerC3;
 	}		
 	
@@ -217,8 +217,8 @@ function drawChartGC( flightName )
 			},
 		vAxes: {
 			// Adds labels to each axis; they don't have to match the axis names.
-			0: {title: 'Altitude (ft)'        				},
-			1: {title: 'Groundspeed (kts)'        				}
+			// 0: {title: 'Altitude (ft)'        				},
+			// 1: {title: 'Groundspeed (kts)'        				}
 			}      
 		};
 			
