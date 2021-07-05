@@ -60,7 +60,7 @@ h1 {
 	border: 10px;
 }
 
-#heading,#groundspeed, #altitude, #climbrate {
+#heading,#groundspeed, #altitude, #climbrate, #gs_dist, #gs_loc, #gs_alt {
 	position: relative;
 	left: 0px;
 	height: 100px;
@@ -86,6 +86,20 @@ h1 {
 	visibility: hidden;
 }
 
+#gs_dist, #gs_loc, #gs_alt {
+	position: relative;
+	left: 0px;
+	height: 200px;
+	width:33%;
+	background: black;
+	color: white;
+	font-size: 24pt;
+	font-family: arial;
+	border-width: 1px;
+	border-color: white;	
+	visibility: hidden;
+}
+
 #dashboard_div {
 	position: absolute;
 	top: 400px;
@@ -99,5 +113,12 @@ h1 {
 	right: 0px;
 	height: 200px;
 	width: 20%;
+}
+
+#gs_div {
+	position: absolute;
+	top: 600px;
+	height: 200px;
+	width: 100%;
 }
 

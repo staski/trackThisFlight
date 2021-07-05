@@ -60,6 +60,7 @@ function handleFiles(myfiles) {
 		  
 		$( "div" ).remove('#button-canvas');
 		$( "#dashboard_div" ).removeAttr("hidden");
+		$( "#gs_div").removeAttr("hidden");
 		//initAeroDromes ();		  		
 		mapInit();
 		setPlanePosition(0);
@@ -70,6 +71,11 @@ function handleFiles(myfiles) {
 		$("#climbrate").css("visibility", "visible");
 		$("#bNewFlight").css("visibility", "visible"); 
 		$("#bInfo").css("visibility", "visible"); 
+		
+
+		$("#gs_dist").css("visibility", "visible"); 
+		$("#gs_loc").css("visibility", "visible"); 
+		$("#gs_alt").css("visibility", "visible"); 
 		
 		drawChart(thisFile.name);
 

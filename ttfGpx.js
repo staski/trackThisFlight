@@ -392,10 +392,29 @@ GPXParser.prototype.addTrackSegment = function(trackSegment)
 
 // set the planes marker in the map using the selected position in the chart view
 function setPlanePosition( i ){
+	var transmitter = new Location(49.4706, 8.51598, 341 / 3.28084);
+	var  DME = new Glideslope(transmitter, 3.7);
 
 	var k = i + offset; // offset is adjusted to the first index in the currently filtered
 						// segment when this segment is displayed
 	if (planePosition != null && k >= 0 && k < pointarray.length){
+		var lat = pointarray[k].LatLng.lat();
+		var lon = pointarray[k].LatLng.lng();
+		var alt = pointarray[k].ele / 3.28084;
+
+		var position = new Location(lat, lon, alt);
+		var sldist =  DME.gpsDistance(position);
+		var location = DME.verticalLocation(position);
+
+		var middle = DME.ranges(position)[2];
+		var s = DME.vspeeds(position, pointarray[k].vel.toFixed());
+		
+		$("#gs_dist").text(new String(sldist.toFixed(1)) + " NM");
+		$("#gs_loc").text(new String(location + "; " + s[0] + " ft/min; " + s[1] + " ft/min"));
+		$("#gs_alt").text(new String(pointarray[k].ele.toFixed()) + " ft");
+
+		// console.log(DME.ranges(position));
+		// console.log(DME.vspeeds(position,pointarray[k].vel.toFixed()));
 		planePosition.setPosition(pointarray[k].LatLng);
 		
 		$("#heading").text(new String(pointarray[k].heading.toFixed()) + " °");
