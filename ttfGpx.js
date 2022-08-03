@@ -564,7 +564,7 @@ function mapInit() {
 	var polyOptions = {
    		strokeColor: '#FF0000',
     	strokeOpacity: 1.0,
-    	strokeWeight: 1,
+    	strokeWeight: 2,
     	map: map,
 	};
 
@@ -608,7 +608,7 @@ function mapSetPoly(rows) {
 	var polyOptions = {
     	strokeColor: '#FF0000',
     	strokeOpacity: 1.0,
-    	strokeWeight: 1,
+    	strokeWeight: 2,
     	map: map,
 	};
 
