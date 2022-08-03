@@ -28,7 +28,7 @@
 
 <div id="button-canvas">
 <div id="title-canvas"><h1>track this flight // visualize & analyze your flight tracks</h1></div>
-<input type="file" id="theFile" style="display:none" onchange="handleFiles(this.files)">
+<input type="file" id="theFile" style="display:none" accept=".gpx" onchange="handleFiles(this.files)">
 <button id="t1" onclick="fileButtonClick()"> select a flight log file<br> (extension .gpx) </button>
 </div>
 
@@ -46,7 +46,7 @@
 </div>
 
 <div id="info_div" visibility="hidden">
-	<input type="file" id="theFile" style="display:none" onchange="handleFiles(this.files)">
+	<input type="file" id="theFile" style="display:none" accept=".gpx" onchange="handleFiles(this.files)">
 
 	<button id="bNewFlight" onclick="fileButtonClick()"> new flight </button>
 	<button id="bInfo" onclick="infoButtonClick()"> toggle display steep turns </button>

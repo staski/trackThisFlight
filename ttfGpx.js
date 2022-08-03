@@ -553,7 +553,7 @@ function mapInit() {
 	centerOfMap = new google.maps.LatLng((maxlat + minlat)/2, (maxlon + minlon)/2);
 	var mapOptions = {
 		streetViewControl: false ,
-		fullscreenControl: false , 
+		fullscreenControl: true , 
     	zoom: 8	,
 	};
 
